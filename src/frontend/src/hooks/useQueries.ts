@@ -9,7 +9,9 @@ export function useGetProducts() {
     queryKey: ['products'],
     queryFn: async () => {
       if (!actor) return [];
-      return actor.getProducts();
+      const products = await actor.getProducts();
+      console.log('[useGetProducts] Fetched products:', products);
+      return products;
     },
     enabled: !!actor && !isFetching,
   });
@@ -22,7 +24,9 @@ export function useGetProductsByCategory(category: string) {
     queryKey: ['products', 'category', category],
     queryFn: async () => {
       if (!actor) return [];
-      return actor.getProductsByCategory(category);
+      const products = await actor.getProductsByCategory(category);
+      console.log(`[useGetProductsByCategory] Fetched products for category "${category}":`, products);
+      return products;
     },
     enabled: !!actor && !isFetching && !!category,
   });
@@ -82,17 +86,36 @@ export function useAddProduct() {
       price,
       imageUrl,
       category,
+      stock,
     }: {
       name: string;
       description: string;
       price: bigint;
       imageUrl: string;
       category: string;
+      stock: bigint;
     }) => {
       if (!actor) throw new Error('Actor not initialized');
-      return actor.addProduct(name, description, price, imageUrl, category);
+      return actor.addProduct(name, description, price, imageUrl, category, stock);
     },
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+    },
+  });
+}
+
+export function useInitializeDefaultProduct() {
+  const { actor } = useActor();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async () => {
+      if (!actor) throw new Error('Actor not initialized');
+      console.log('[useInitializeDefaultProduct] Initializing default product (Glow man face wash)');
+      return actor.initializeDefaultProduct();
+    },
+    onSuccess: () => {
+      console.log('[useInitializeDefaultProduct] Default product initialized successfully');
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },
   });

@@ -62,7 +62,7 @@ export default function Cart() {
               <CardContent className="space-y-4">
                 <div className="flex justify-between text-sm">
                   <span className="text-sage-600">Items ({totalItems})</span>
-                  <span className="font-medium text-sage-900">${totalAmount.toFixed(2)}</span>
+                  <span className="font-medium text-sage-900">₹{totalAmount.toFixed(0)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-sage-600">Shipping</span>
@@ -71,7 +71,7 @@ export default function Cart() {
                 <Separator />
                 <div className="flex justify-between text-lg font-bold">
                   <span className="text-sage-900">Total</span>
-                  <span className="text-terracotta-600">${totalAmount.toFixed(2)}</span>
+                  <span className="text-terracotta-600">₹{totalAmount.toFixed(0)}</span>
                 </div>
               </CardContent>
               <CardFooter className="flex-col gap-2">

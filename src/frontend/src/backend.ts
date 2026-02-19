@@ -93,6 +93,7 @@ export interface Product {
     id: bigint;
     name: string;
     description: string;
+    stock: bigint;
     imageUrl: string;
     category: string;
     price: bigint;
@@ -102,27 +103,28 @@ export interface CartItem {
     quantity: bigint;
 }
 export interface backendInterface {
-    addProduct(name: string, description: string, price: bigint, imageUrl: string, category: string): Promise<void>;
+    addProduct(name: string, description: string, price: bigint, imageUrl: string, category: string, stock: bigint): Promise<void>;
     addToCart(productId: bigint, quantity: bigint): Promise<void>;
     checkout(): Promise<void>;
     getProductImage(productId: bigint): Promise<string>;
     getProducts(): Promise<Array<Product>>;
     getProductsByCategory(category: string): Promise<Array<Product>>;
+    initializeDefaultProduct(): Promise<void>;
     viewCart(): Promise<Array<CartItem>>;
 }
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
-    async addProduct(arg0: string, arg1: string, arg2: bigint, arg3: string, arg4: string): Promise<void> {
+    async addProduct(arg0: string, arg1: string, arg2: bigint, arg3: string, arg4: string, arg5: bigint): Promise<void> {
         if (this.processError) {
             try {
-                const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4);
+                const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5);
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4);
+            const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5);
             return result;
         }
     }
@@ -193,6 +195,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.getProductsByCategory(arg0);
+            return result;
+        }
+    }
+    async initializeDefaultProduct(): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.initializeDefaultProduct();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.initializeDefaultProduct();
             return result;
         }
     }

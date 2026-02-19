@@ -4,7 +4,9 @@ import Array "mo:core/Array";
 import Iter "mo:core/Iter";
 import Nat "mo:core/Nat";
 import Principal "mo:core/Principal";
+import Migration "migration";
 
+(with migration = Migration.run)
 actor {
   type Product = {
     id : Nat;
@@ -13,6 +15,7 @@ actor {
     price : Nat;
     imageUrl : Text;
     category : Text;
+    stock : Nat;
   };
 
   type CartItem = {
@@ -31,10 +34,10 @@ actor {
   let carts = Map.empty<Principal, Map.Map<Nat, CartItem>>();
   let orders = Map.empty<Nat, Order>();
 
-  var nextProductId = 1;
+  var nextProductId = 2; // Start from 2 since we have a default product now
   var nextOrderId = 1;
 
-  public shared ({ caller }) func addProduct(name : Text, description : Text, price : Nat, imageUrl : Text, category : Text) : async () {
+  public shared ({ caller }) func addProduct(name : Text, description : Text, price : Nat, imageUrl : Text, category : Text, stock : Nat) : async () {
     let product : Product = {
       id = nextProductId;
       name;
@@ -42,6 +45,7 @@ actor {
       price;
       imageUrl;
       category;
+      stock;
     };
     products.add(nextProductId, product);
     nextProductId += 1;
@@ -117,4 +121,19 @@ actor {
   public query ({ caller }) func getProducts() : async [Product] {
     products.values().toArray();
   };
+
+  // Helper function to initialize default product
+  public shared ({ caller }) func initializeDefaultProduct() : async () {
+    let defaultProduct : Product = {
+      id = 1;
+      name = "Glow man face wash";
+      description = "Specifically formulated for men, this gentle cleanser effectively removes dirt, oil, and impurities, leaving your skin feeling refreshed and clean. Enriched with natural ingredients to help prevent breakouts and promote a healthy complexion. Perfect for daily use.";
+      price = 120; // Price updated to INR 120
+      imageUrl = "https://ipfs.io/ipfs/QmGlowManFaceWashImage";
+      category = "cleanser";
+      stock = 50;
+    };
+    products.add(1, defaultProduct);
+  };
 };
+

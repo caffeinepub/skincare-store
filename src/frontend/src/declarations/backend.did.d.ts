@@ -15,13 +15,14 @@ export interface Product {
   'id' : bigint,
   'name' : string,
   'description' : string,
+  'stock' : bigint,
   'imageUrl' : string,
   'category' : string,
   'price' : bigint,
 }
 export interface _SERVICE {
   'addProduct' : ActorMethod<
-    [string, string, bigint, string, string],
+    [string, string, bigint, string, string, bigint],
     undefined
   >,
   'addToCart' : ActorMethod<[bigint, bigint], undefined>,
@@ -29,6 +30,7 @@ export interface _SERVICE {
   'getProductImage' : ActorMethod<[bigint], string>,
   'getProducts' : ActorMethod<[], Array<Product>>,
   'getProductsByCategory' : ActorMethod<[string], Array<Product>>,
+  'initializeDefaultProduct' : ActorMethod<[], undefined>,
   'viewCart' : ActorMethod<[], Array<CartItem>>,
 }
 export declare const idlService: IDL.ServiceClass;

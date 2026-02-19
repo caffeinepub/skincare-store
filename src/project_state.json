@@ -1,13 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 9,
   "summary": "E-commerce platform for selling skincare items online",
   "architectural_notes": [
     "E-commerce platform for online skincare product sales"
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Hero banner showing natural skincare products with soft lighting and botanical elements (hero-banner.dim_1200x400.png)\n- Facial cleanser product photo with minimalist aesthetic (cleanser-product.dim_400x400.png)\n- Moisturizer cream jar on clean background (moisturizer-product.dim_400x400.png)\n- Vitamin C serum bottle with elegant styling (serum-product.dim_400x400.png)\n- Face mask product with spa-like presentation (mask-product.dim_400x400.png)",
+  "known_issues": [
+    "Face wash product (Glow man face wash) is not displaying in the product catalog despite being added to backend"
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-product-catalog-that-displays-skincare-items-with-product-name-description-price-and-product-image",
@@ -56,6 +57,38 @@
         "REQ-6"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-display-the-glow-man-face-wash-product-image-as-a-static-asset-from-frontend-public-assets-generated-using-the-filename-glow-man-facewash-dim-800x800-png",
+      "title": "Display the Glow man face wash product image as a static asset from frontend/public/assets/generated using the filename glow-man-facewash.dim_800x800.png",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-updated-price-of-120-for-glow-man-face-wash-in-the-product-catalog-with-proper-currency-formatting",
+      "title": "Display the updated price of ₹120 for 'Glow man face wash' in the product catalog with proper currency formatting",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-investigate-and-fix-why-the-glow-man-face-wash-product-is-not-appearing-in-the-product-catalog-display-despite-being-added-to-the-backend",
+      "title": "Investigate and fix why the 'Glow man face wash' product is not appearing in the product catalog display despite being added to the backend",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-imagehelpers-ts-utility-correctly-maps-glow-man-face-wash-product-to-the-glow-man-facewash-dim-800x800-png-static-asset-and-that-this-mapping-is-used-in-the-productcard-component",
+      "title": "Ensure the imageHelpers.ts utility correctly maps 'Glow man face wash' product to the glow-man-facewash.dim_800x800.png static asset and that this mapping is used in the ProductCard component",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -63,6 +96,42 @@
       "id": "AR-1",
       "summary": "Create e-commerce platform for skincare products",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add 'Glow man face wash' product to catalog",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add a new product to the backend catalog with name 'Glow man face wash', category 'cleanser', with appropriate description highlighting its benefits for men's skincare, price point between $15-25, and stock quantity of 50 units",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Update Glow man face wash product price to 120 MRP",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Update the price of the 'Glow man face wash' product in the backend to 120 (MRP in Indian Rupees)",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Verify that the 'Glow man face wash' product exists in the backend products Map with correct data including name, category 'cleanser', price 120, and adequate stock quantity",
+      "reqIds": [
+        "REQ-12"
+      ],
       "status": "pending"
     }
   ],

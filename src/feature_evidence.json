@@ -2,107 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-product-catalog-that-displays-skincare-items-with-product-name-description-price-and-product-image",
-      "featureTitle": "Create a product catalog that displays skincare items with product name, description, price, and product image",
+      "featureId": "feature-investigate-and-fix-why-the-glow-man-face-wash-product-is-not-appearing-in-the-product-catalog-display-despite-being-added-to-the-backend",
+      "featureTitle": "Investigate and fix why the 'Glow man face wash' product is not appearing in the product catalog display despite being added to the backend",
       "files": [
         "frontend/src/components/ProductCard.tsx",
-        "frontend/src/pages/ProductCatalog.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-a-shopping-cart-system-where-users-can-add-skincare-products-view-cart-contents-update-quantities-and-remove-items",
-      "featureTitle": "Implement a shopping cart system where users can add skincare products, view cart contents, update quantities, and remove items",
-      "files": [
-        "frontend/src/components/CartItem.tsx",
-        "frontend/src/hooks/useCart.ts",
-        "frontend/src/pages/Cart.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-checkout-flow-that-allows-users-to-complete-their-purchase-with-order-confirmation",
-      "featureTitle": "Create a checkout flow that allows users to complete their purchase with order confirmation",
-      "files": [
-        "frontend/src/pages/Checkout.tsx",
-        "frontend/src/pages/OrderConfirmation.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-product-categories-or-filtering-to-help-users-browse-skincare-items-by-type-e-g-cleansers-moisturizers-serums-masks",
-      "featureTitle": "Implement product categories or filtering to help users browse skincare items by type (e.g., cleansers, moisturizers, serums, masks)",
-      "files": [
-        "frontend/src/components/CategoryFilter.tsx",
-        "frontend/src/pages/ProductCatalog.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-design-a-clean-elegant-storefront-interface-with-a-cohesive-visual-theme-that-reflects-skincare-and-wellness-aesthetics-using-soft-natural-color-palettes-such-as-sage-green-cream-and-terracotta-tones-modern-typography-and-spacious-layouts-that-emphasize-product-imagery-and-readability",
-      "featureTitle": "Design a clean, elegant storefront interface with a cohesive visual theme that reflects skincare and wellness aesthetics, using soft, natural color palettes (such as sage green, cream, and terracotta tones), modern typography, and spacious layouts that emphasize product imagery and readability",
-      "files": [
-        "frontend/src/components/Layout.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-display-generated-product-images-and-hero-banner-as-static-assets-from-frontend-public-assets-generated",
-      "featureTitle": "Display generated product images and hero banner as static assets from frontend/public/assets/generated",
-      "files": [
-        "frontend/src/components/HeroBanner.tsx",
         "frontend/src/pages/ProductCatalog.tsx",
         "frontend/src/utils/imageHelpers.ts"
       ],
@@ -114,7 +17,26 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-6"
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-imagehelpers-ts-utility-correctly-maps-glow-man-face-wash-product-to-the-glow-man-facewash-dim-800x800-png-static-asset-and-that-this-mapping-is-used-in-the-productcard-component",
+      "featureTitle": "Ensure the imageHelpers.ts utility correctly maps 'Glow man face wash' product to the glow-man-facewash.dim_800x800.png static asset and that this mapping is used in the ProductCard component",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/utils/imageHelpers.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
       ],
       "confidence": "high"
     }

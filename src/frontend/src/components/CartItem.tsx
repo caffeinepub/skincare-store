@@ -65,7 +65,7 @@ export default function CartItem({ item }: CartItemProps) {
               <h3 className="font-semibold text-sage-900">{item.product.name}</h3>
               <p className="text-sm text-sage-600">{item.product.category}</p>
               <p className="mt-1 font-semibold text-terracotta-600">
-                ${Number(item.product.price).toFixed(2)}
+                ₹{Number(item.product.price)}
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export default function CartItem({ item }: CartItemProps) {
               </div>
 
               <div className="flex items-center gap-4">
-                <p className="font-semibold text-sage-900">${item.subtotal.toFixed(2)}</p>
+                <p className="font-semibold text-sage-900">₹{item.subtotal.toFixed(0)}</p>
                 <Button
                   variant="ghost"
                   size="icon"
