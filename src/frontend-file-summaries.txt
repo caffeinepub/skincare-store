@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup defining routes for product catalog, cart, checkout, and order confirmation pages.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including fetching products, managing cart, and checkout functionality.",
+  "frontend/src/hooks/useCart.ts": "Custom hook that combines cart items with product details and calculates totals for the shopping cart.",
+  "frontend/src/utils/imageHelpers.ts": "Utility functions to map product categories to their corresponding generated image paths in the assets folder.",
+  "frontend/src/components/Layout.tsx": "Root layout component with header navigation, shopping cart badge, and footer with branding and attribution.",
+  "frontend/src/components/HeroBanner.tsx": "Hero banner component displaying the generated hero image with overlay text and call-to-action button.",
+  "frontend/src/components/CategoryFilter.tsx": "Filter component with buttons for browsing products by skincare category (cleansers, moisturizers, serums, masks).",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card displaying product image, name, description, price, and add-to-cart functionality.",
+  "frontend/src/components/CartItem.tsx": "Cart item component with quantity controls, remove button, and subtotal display for individual cart items.",
+  "frontend/src/pages/ProductCatalog.tsx": "Main product catalog page with hero banner, category filtering, and grid display of all skincare products.",
+  "frontend/src/pages/Cart.tsx": "Shopping cart page displaying all cart items with quantity management and order summary with checkout button.",
+  "frontend/src/pages/Checkout.tsx": "Checkout page with shipping information form and order summary for completing purchases.",
+  "frontend/src/pages/OrderConfirmation.tsx": "Order confirmation page displayed after successful checkout with success message and next steps.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring sage green, cream, and terracotta palette for skincare wellness aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom skincare color palette (sage, cream, terracotta) and typography settings.",
+  "frontend/src/main.tsx": "Application entry point with QueryClient, InternetIdentity provider, and Sonner toast notifications setup."
+}

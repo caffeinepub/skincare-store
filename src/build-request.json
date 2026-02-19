@@ -1,0 +1,136 @@
+{
+  "kind": "build_request",
+  "title": "Create e-commerce platform for skincare products",
+  "projectName": "Skincare Store",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a product catalog that displays skincare items with product name, description, price, and product image",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I want to platform for my store to sale onlin skins Care items"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are displayed in a grid or list layout",
+        "Each product shows name, description, price, and image",
+        "Product data is stored and retrieved from the backend"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a shopping cart system where users can add skincare products, view cart contents, update quantities, and remove items",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I want to platform for my store to sale onlin skins Care items"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add products to cart from the product catalog",
+        "Cart displays all added items with quantities and subtotals",
+        "Users can increase or decrease item quantities",
+        "Users can remove items from the cart",
+        "Cart shows total price for all items"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a checkout flow that allows users to complete their purchase with order confirmation",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I want to platform for my store to sale onlin skins Care items"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can proceed from cart to checkout",
+        "Checkout captures necessary order information",
+        "Orders are stored in the backend",
+        "Users receive confirmation after completing purchase"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement product categories or filtering to help users browse skincare items by type (e.g., cleansers, moisturizers, serums, masks)",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "skins Care items"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are categorized by skincare type",
+        "Users can filter or navigate products by category",
+        "Category information is stored with each product"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Design a clean, elegant storefront interface with a cohesive visual theme that reflects skincare and wellness aesthetics, using soft, natural color palettes (such as sage green, cream, and terracotta tones), modern typography, and spacious layouts that emphasize product imagery and readability",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The interface uses a consistent color scheme appropriate for skincare products",
+        "Typography is clean and readable",
+        "Layout provides good visual hierarchy and whitespace",
+        "Product images are prominently displayed",
+        "Overall aesthetic feels premium and wellness-focused"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Display generated product images and hero banner as static assets from frontend/public/assets/generated",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are loaded from the public assets directory",
+        "Images are properly displayed in the product catalog and hero section",
+        "Image paths reference the generated filenames"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use single-actor architecture for all Motoko backend logic",
+    "Do not modify immutable frontend paths including useInternetIdentity.ts, useInternetIdentity.tsx, useActor.ts, main.tsx, and frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Payment processing integration with external services",
+    "Real-time inventory management",
+    "User reviews and ratings system",
+    "Admin dashboard for product management",
+    "Shipping and logistics integration"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Hero banner showing natural skincare products with soft lighting and botanical elements (hero-banner.dim_1200x400.png)",
+      "Facial cleanser product photo with minimalist aesthetic (cleanser-product.dim_400x400.png)",
+      "Moisturizer cream jar on clean background (moisturizer-product.dim_400x400.png)",
+      "Vitamin C serum bottle with elegant styling (serum-product.dim_400x400.png)",
+      "Face mask product with spa-like presentation (mask-product.dim_400x400.png)"
+    ],
+    "edits": []
+  }
+}
